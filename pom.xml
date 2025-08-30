@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>net.youssfi</groupId>
-    <artifactId>bdcc-enset-spring-mvc</artifactId>
+    <artifactId>GestionProduit_Spring-Thymeleaf</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bdcc-enset-spring-mvc</name>
     <description>bdcc-enset-spring-mvc</description>

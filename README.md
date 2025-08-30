@@ -6,17 +6,21 @@ GestionProduit_Spring-Thymeleaf est une application web pour gérer des produits
 
 ## 🚀 Fonctionnalités
 
-- Ajouter un produit avec ses détails (nom, description, prix, quantité…)
-- Modifier les informations d’un produit existant
-- Supprimer un produit
-- Afficher la liste des produits dans un tableau
-- Interface web dynamique avec **Thymeleaf**
+Authentification pour admin et utilisateurs
+
+Gestion des produits : création, lecture, mise à jour, suppression
+
+Import de produits depuis CSV et Excel
+
+Recherche et filtrage de produits
+
+Interface web responsive avec Thymeleaf
 
 ---
 
 ## 🛠 Technologies utilisées
 
-- **Java 17** : langage principal
+- **Java 21** : 
 - **Spring Boot** : framework pour le backend
 - **Thymeleaf** : moteur de templates pour le frontend
 - **Maven** : gestion des dépendances
@@ -41,34 +45,28 @@ GestionProduit_Spring-Thymeleaf/
 ├─ pom.xml # Gestion Maven
 └─ README.md # Ce fichier
 
-## 💻 Prérequis
-
-- Java 17 ou supérieur
-- Maven installé
-- Base de données configurée (H2 ou MySQL)
-- IDE recommandé : IntelliJ IDEA ou Eclipse
-
 ---
 ## 🖼️ Captures d’écran
 
-### Page d’accueil
+- **Home Page** 
 ![Home Page](imgs/home_page.PNG)
+- **Admin Login** 
+![Admin Login](imgs/login_admin.PNG)
+- **User Login** 
+![User Login](imgs/login_user1.PNG)
+- **Products CSV** 
+![Products CSV](imgs/products_CSV.PNG)
+- **Products Excel** 
+![Products Excel](imgs/products_excel.PNG)
+- **Search Page** 
+![Search Page](imgs/search_page.PNG)
+- **Update Product** 
+![Update Product](imgs/update_produit.PNG)
+- **User1 Page** 
+![User1 Page](imgs/user1_page.PNG)
+- **User2 Page**
+![User2 Page](imgs/user2_page.PNG)
 
-### Liste des produits (utilisateur 1)
-![Liste Produits User1](imgs/listeProduits_user1.PNG)
-
-### Liste des produits (utilisateur 2)
-![Liste Produits User2](imgs/listeProduits_user2.PNG)
-
-### Login Admin
-![Login Admin](imgs/login_admin.PNG)
-
-### Login User
-![Login User](imgs/login_user1.PNG)
-
-### Ajout d’un produit (Admin)
-![New Product Admin](imgs/newProduct_admin.PNG)
- 
 ---
 
 ## ⚡ Installation et lancement
@@ -77,3 +75,4 @@ GestionProduit_Spring-Thymeleaf/
 
 ```bash
 git clone https://github.com/najwamoukhliss/GestionProduit_Spring-Thymeleaf.git
+cd GestionProduit_Spring-Thymeleaf
