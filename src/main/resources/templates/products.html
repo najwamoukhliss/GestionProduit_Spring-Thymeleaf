@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="layout1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<div class="p-3" layout:fragment="content1">
+
+    <!-- Bouton New Product visible uniquement pour ADMIN -->
+    <div class="p-3" sec:authorize="hasRole('ADMIN')">
+        <a class="btn btn-primary" th:href="@{/admin/newProduct}">New Product</a>
+    </div>
+
+    <!-- 🔍 Formulaire de recherche -->
+    <div class="mb-3">
+        <form th:action="@{/user/search}" method="get" class="d-flex">
+            <input type="text" name="keyword" th:value="${keyword}" placeholder="Search product..." class="form-control me-2"/>
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
+    </div>
+    <a th:href="@{/export/csv}" class="btn btn-outline-primary">Export CSV</a>
+    <a th:href="@{/export/excel}" class="btn btn-outline-success">Export Excel</a>
+    <a th:href="@{/export/pdf}" class="btn btn-outline-danger">Export PDF</a>
+
+
+
+    <!-- Tableau des produits -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th sec:authorize="hasRole('ADMIN')">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p:${productList}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.price}"></td>
+            <td th:text="${p.quantity}"></td>
+            <td sec:authorize="hasRole('ADMIN')">
+                <form method="post" th:action="@{/admin/delete(id=${p.id})}" style="display:inline">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+                <!-- Lien vers modification -->
+                <a th:href="@{/admin/edit(id=${p.id})}" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
